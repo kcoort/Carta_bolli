@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para mi Bolliii</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#fce4ec, #f8bbd0);
+      font-family: 'Indie Flower', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 2s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d81b60;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 8s infinite;
+      opacity: 0.6;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); }
+      100% { transform: translateY(-100vh) rotate(45deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts"></div>
+
+  <div class="card">
+    <h1>Para mi querido Bolliii</h1>
+    <p>
+      Quiero que sepas que <strong>te amoo mutititititimoooo</strong>. Gracias por estar a mi lado, por aguantarme con tanto amor y paciencia durante estos <strong>2 años y 8 meses</strong> (desde aquel 23 de enero del 2023, que marcó el inicio de todo lo bonito que hemos vivido).<br><br>
+
+      Cada día contigo es un regalo. Deseo que nuestro amor siga creciendo siempre, que nunca caigamos en la rutina y que sigamos amándonos más y más.<br><br>
+
+      Amo tu sonrisa, tu forma de ser, lo guapo que eres y cómo me tratas como tu peque. Eres mi lugar seguro y mi alegría diaria.<br><br>
+
+      Le pido a Diosito que nos mantenga unidos para siempre. Que nos regale una vida larga juntitos, si eso también es lo que tú quieres… porque yo sí.<br><br>
+
+      Con todo mi amor,<br>
+      <strong>Tu peque</strong>
+    </p>
+  </div>
+
+  <script>
+    const hearts = document.querySelector('.hearts');
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      heart.style.opacity = 0.4 + Math.random() * 0.6;
+      hearts.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
